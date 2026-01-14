@@ -47,7 +47,7 @@ const customCors = (req, res, next) => {
 // Middleware to log incoming Request Metadata
 app.use((req, res, next) => {
   console.log("--- NEW REQUEST RECEIVED ---");
-  console.log(`Method: ${req.method}`);
+  console.log(`Method: ${yh.method}`);
   console.log(`URL: ${req.url}`);
   console.log("Headers:", req.headers); // This is your Request Metadata
   next();
