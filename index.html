@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <h1>CORS Tester</h1>
+    <button onclick="sendDelete()">Trigger DELETE Request</button>
+    <p id="status"></p>
+
+    <script>
+      async function sendDelete() {
+        try {
+          const response = await fetch("http://localhost:3001/data", {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+          });
+          const data = await response.json();
+          document.getElementById("status").innerText = data.message;
+        } catch (err) {
+          document.getElementById("status").innerText =
+            err + ":" + `CORS Error! Check Console.`;
+        }
+      }
+    </script>
+  </body>
+</html>
